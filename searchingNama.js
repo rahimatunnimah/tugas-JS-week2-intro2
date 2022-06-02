@@ -34,4 +34,3 @@ function searchName(name, num, callback) {
   }
   
   searchName("an", 3, logSearch);
-  
