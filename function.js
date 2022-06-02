@@ -1,16 +1,25 @@
 function seleksiNilai(nilaiAwal,nilaiAkhir,dataArray){
-    dataArray.sort();
-    const result = dataArray.filter(nilaiArray => {
-        return nilaiArray > nilaiAwal && nilaiArray < nilaiAkhir
-    });
-   
+    dataArray.sort(function(a,b) {
+        return a-b;
+    })
     if (nilaiAwal > nilaiAkhir){
-        return "Nilai akhir harus lebih besar dari nilai awal";
+        console.log ("Nilai akhir harus lebih besar dari nilai awal");
     } else if (dataArray.length < 5){
-        return "Jumlah angka dalam dataArray harus lebih dari 5";
+        console.log ("Jumlah angka dalam dataArray harus lebih dari 5");
     } else {
-        console.log(result);
+        const result = dataArray.filter(nilaiArray => {
+            return nilaiArray > nilaiAwal && nilaiArray < nilaiAkhir
+        })
+        if (result.length == 0){
+            console.log("Nilai tidak ditemukan");
+        } else {
+            console.log(result);
+        }  
     }
-};
+}
 
-seleksiNilai(5,20,[2,25,4,14,17,30,8])
+
+seleksiNilai(5, 20 , [2, 25, 4, 14, 17, 30, 8])
+seleksiNilai(15, 3 , [2, 25, 4, 14, 17, 30, 8])
+seleksiNilai(5, 17 , [2, 25, 4])
+seleksiNilai(5, 17 , [2, 25, 4, 1, 30, 18])
