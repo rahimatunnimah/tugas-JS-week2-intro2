@@ -22,6 +22,10 @@ function searchName(name, num, callback) {
   
   function logSearch(name, num, arr) {
     arr.sort();
+    if(typeof name != "string"){
+      console.log("input harus berupa string")
+      return;
+    } 
     const result = [];
     let i = 0;
     while (result.length < num && i < arr.length) {
@@ -30,7 +34,11 @@ function searchName(name, num, callback) {
       }
       i++;
     }
-    console.log(result);
+    if (result.length == 0){
+      console.log("Hasil tidak ditemukan");
+    } else{
+      console.log(result);
+    }
   }
   
   searchName("an", 3, logSearch);
