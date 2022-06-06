@@ -3,8 +3,8 @@
 //1. filter()
 // filter() adalah sebuah method javascript yang memfilter array berdasarkan logika yang diberikan
 // dan mengembalikan array baru yang berisi item yang memenuhi aturan tersebut.
-// const weeklyReadings = [20, 10, 20.5, 19, 21, 21.5, 23];
 
+const weeklyReadings = [20, 10, 20.5, 19, 21, 21.5, 23];
 const colderDays = weeklyReadings.filter(dayTemperature => {
     return dayTemperature < 21;
 })
